@@ -35,13 +35,9 @@ function evaluationWinner (){
     }
 }
 
+
 function machineSelect(){
-    var data = getDataPosition();
-    var random = Math.floor(Math.random() * 9);
-    while(data[random] !== ''){
-        random = Math.floor(Math.random() * 9);
-    }
-    console.log(`random is function machineSelect ${random}`);
+    var random = Math.floor(Math.random() * 9) + 1;
     return random;
 }
  
@@ -107,11 +103,8 @@ function pressButton(id){
         let x = false;
         while (x === false){
             var random = machineSelect();
-            console.log('random is ' + random);
             let randomConvert = convertNumberToId(random);
-            console.log('random convert is ' + randomConvert);
             let isCleanMachine = evaluationSquareClear(randomConvert);
-            console.log('isCleanMachine is ' + isCleanMachine);
             if (isCleanMachine === true){   
                 machineWritte(random);
                 evaluationWinner();
