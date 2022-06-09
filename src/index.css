@@ -1,0 +1,40 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    
+  }
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 4%;
+}
+
+.text{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;\
+
+}
+
+#container-game{
+    background-color: lightgray;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-items: center;
+    justify-items: center;
+    height: 350px;
+    width: 350px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+.game-box{
+    
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border-radius: 20%;
+}
