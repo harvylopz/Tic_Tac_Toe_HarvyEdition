@@ -1,5 +1,6 @@
 var countGame = 0;
 var winner = "no info";
+var noWinner = 0;
 
 function getDataPosition(){
     var leftTop =  document.getElementById('left-top').innerText;
@@ -20,51 +21,67 @@ function evaluationWinner (){
     if(data[0] === "X" && data[1] === "X" && data[2] === "X"){
         winner = "The Winner is X";
         alert(winner);
+        noWinner = 1;
     }  else if(data[3] === "X" && data[4] === "X" && data[5] === "X"){
         winner = "The Winner is X";
         alert(winner);
+        noWinner = 1;
     } else if(data[6] === "X" && data[7] === "X" && data[8] === "X"){
         winner = "The Winner is X";
         alert(winner);
+        noWinner = 1;
     } else if(data[0] === "X" && data[3] === "X" && data[6] === "X"){
         winner = "The Winner is X";
         alert(winner);
+        noWinner = 1;
     } else if(data[1] === "X" && data[4] === "X" && data[7] === "X"){
         winner = "The Winner is X";
         alert(winner);
+        noWinner = 1;
     } else if(data[2] === "X" && data[5] === "X" && data[8] === "X"){
         winner = "The Winner is X";
         alert(winner);
+        noWinner = 1;
     } else if(data[0] === "X" && data[4] === "X" && data[8] === "X"){
         winner = "The Winner is X";
         alert(winner);
+        noWinner = 1;
     } else if(data[2] === "X" && data[4] === "X" && data[6] === "X"){
         winner = "The Winner is X";
         alert(winner);
+        noWinner = 1;
     } else if(data[0] === "O" && data[1] === "O" && data[2] === "O"){
         winner = "The Winner is O";
         alert(winner);
+        noWinner = 1;
     } else if(data[3] === "O" && data[4] === "O" && data[5] === "O"){
         winner = "The Winner is O";
         alert(winner);
+        noWinner = 1;
     } else if(data[6] === "O" && data[7] === "O" && data[8] === "O"){
         winner = "The Winner is O";
         alert(winner);
+        noWinner = 1;
     } else if(data[0] === "O" && data[3] === "O" && data[6] === "O"){
         winner = "The Winner is O";
         alert(winner);
+        noWinner = 1;
     } else if(data[1] === "O" && data[4] === "O" && data[7] === "O"){
         winner = "The Winner is O";
         alert(winner);
+        noWinner = 1;
     } else if(data[2] === "O" && data[5] === "O" && data[8] === "O"){
         winner = "The Winner is O";
         alert(winner);
+        noWinner = 1;
     } else if(data[0] === "O" && data[4] === "O" && data[8] === "O"){
         winner = "The Winner is O";
         alert(winner);
+        noWinner = 1;
     } else if(data[2] === "O" && data[4] === "O" && data[6] === "O"){
         winner = "The Winner is O";
         alert(winner);
+        noWinner = 1;
     }
 }
 
@@ -139,12 +156,12 @@ function pressButton(id){
         countGame = countGame + 1;
         var button = document.getElementById(id);
         button.innerText = 'X';
-    
-            
-        
         let x = false;
         if (countGame  === 5){
-            console.log('no winner');
+            evaluationWinner();
+            if (noWinner === 0){
+                alert('No Winner');
+            }
         }   else {
             while (x === false){
                 var random = machineSelect();
@@ -152,7 +169,6 @@ function pressButton(id){
                 let isCleanMachine = evaluationSquareClear(randomConvert);
                 if (isCleanMachine === true){   
                     machineWritte(random);
-                    evaluationWinner();
                     x = true;
                 } else {
                     x = false;  
@@ -161,4 +177,5 @@ function pressButton(id){
             }
         }      
     }
+    evaluationWinner();
 }
