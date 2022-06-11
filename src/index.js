@@ -1,3 +1,6 @@
+var countGame = 0;
+var winner = "no info";
+
 function getDataPosition(){
     var leftTop =  document.getElementById('left-top').innerText;
     var centerTop = document.getElementById('center-top').innerText;
@@ -13,27 +16,59 @@ function getDataPosition(){
 
 function evaluationWinner (){
     var data = getDataPosition();
-    if(data[0] === data[1] && data[1] === data[2]){
-        console.log('winner is ' + data[0]);
-    }
-    else if(data[3] === data[4] && data[4] === data[5]){
-        console.log('winner is ' + data[3]);
-    } else if(data[6] === data[7] && data[7] === data[8]){
-        console.log('winner is ' + data[6]);
-    } else if(data[0] === data[3] && data[3] === data[6]){
-        console.log('winner is ' + data[0]);
-    } else if(data[1] === data[4] && data[4] === data[7]){
-        console.log('winner is ' + data[1]);
-    } else if(data[2] === data[5] && data[5] === data[8]){
-        console.log('winner is ' + data[2]);
-    } else if(data[0] === data[4] && data[4] === data[8]){
-        console.log('winner is ' + data[0]);
-    } else if(data[2] === data[4] && data[4] === data[6]){
-        console.log('winner is ' + data[2]);
-    } else { 
-        console.log('no winner');
+    console.log(data);
+    if(data[0] === "X" && data[1] === "X" && data[2] === "X"){
+        winner = "The Winner is X";
+        alert(winner);
+    }  else if(data[3] === "X" && data[4] === "X" && data[5] === "X"){
+        winner = "The Winner is X";
+        alert(winner);
+    } else if(data[6] === "X" && data[7] === "X" && data[8] === "X"){
+        winner = "The Winner is X";
+        alert(winner);
+    } else if(data[0] === "X" && data[3] === "X" && data[6] === "X"){
+        winner = "The Winner is X";
+        alert(winner);
+    } else if(data[1] === "X" && data[4] === "X" && data[7] === "X"){
+        winner = "The Winner is X";
+        alert(winner);
+    } else if(data[2] === "X" && data[5] === "X" && data[8] === "X"){
+        winner = "The Winner is X";
+        alert(winner);
+    } else if(data[0] === "X" && data[4] === "X" && data[8] === "X"){
+        winner = "The Winner is X";
+        alert(winner);
+    } else if(data[2] === "X" && data[4] === "X" && data[6] === "X"){
+        winner = "The Winner is X";
+        alert(winner);
+    } else if(data[0] === "O" && data[1] === "O" && data[2] === "O"){
+        winner = "The Winner is O";
+        alert(winner);
+    } else if(data[3] === "O" && data[4] === "O" && data[5] === "O"){
+        winner = "The Winner is O";
+        alert(winner);
+    } else if(data[6] === "O" && data[7] === "O" && data[8] === "O"){
+        winner = "The Winner is O";
+        alert(winner);
+    } else if(data[0] === "O" && data[3] === "O" && data[6] === "O"){
+        winner = "The Winner is O";
+        alert(winner);
+    } else if(data[1] === "O" && data[4] === "O" && data[7] === "O"){
+        winner = "The Winner is O";
+        alert(winner);
+    } else if(data[2] === "O" && data[5] === "O" && data[8] === "O"){
+        winner = "The Winner is O";
+        alert(winner);
+    } else if(data[0] === "O" && data[4] === "O" && data[8] === "O"){
+        winner = "The Winner is O";
+        alert(winner);
+    } else if(data[2] === "O" && data[4] === "O" && data[6] === "O"){
+        winner = "The Winner is O";
+        alert(winner);
     }
 }
+
+    
 
 
 function machineSelect(){
@@ -93,26 +128,37 @@ function convertNumberToId(number){
         return 'right-bottom';
     }
 }
+
+
+
+
+
 function pressButton(id){
     let isClean = evaluationSquareClear(id);
-    
     if (isClean === true){
+        countGame = countGame + 1;
         var button = document.getElementById(id);
         button.innerText = 'X';
-        evaluationWinner(); 
+    
+            
+        
         let x = false;
-        while (x === false){
-            var random = machineSelect();
-            let randomConvert = convertNumberToId(random);
-            let isCleanMachine = evaluationSquareClear(randomConvert);
-            if (isCleanMachine === true){   
-                machineWritte(random);
-                evaluationWinner();
-                x = true;
-            } else {
-                x = false;  
-                console.log('machine is busy');
+        if (countGame  === 5){
+            console.log('no winner');
+        }   else {
+            while (x === false){
+                var random = machineSelect();
+                let randomConvert = convertNumberToId(random);
+                let isCleanMachine = evaluationSquareClear(randomConvert);
+                if (isCleanMachine === true){   
+                    machineWritte(random);
+                    evaluationWinner();
+                    x = true;
+                } else {
+                    x = false;  
+                    console.log('machine is busy');
+                }
             }
-        }   
+        }      
     }
 }
