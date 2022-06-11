@@ -11,7 +11,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 4%;
+    margin: 4% ;
 }
 
 .text{
@@ -30,7 +30,7 @@ body{
     grid-template-columns: auto auto auto;
     align-items: center;
     justify-items: center;
-    height: 350px;
+    height: 300px;
     width: 350px;
     margin-top: 20px;
     border-radius: 10px;
@@ -38,9 +38,9 @@ body{
 .game-box{
     
     width: 100px;
-    height: 100px;
+    height: 80px;
     background-color: rgb(250, 111, 111);
-    border-radius: 20%;
+    border-radius: 15%;
     font-size: 4rem;
     text-align: center;
     color: white;
