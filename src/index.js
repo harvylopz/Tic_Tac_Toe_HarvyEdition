@@ -18,74 +18,58 @@ function getDataPosition(){
 function evaluationWinner (){
     var data = getDataPosition();
     console.log(data);
-    if(data[0] === "X" && data[1] === "X" && data[2] === "X"){
-        winner = "The Winner is X";
-        alert(winner);
+    if(data[0] === "X" && data[1] === "X" && data[2] === "X"){        
+        document.getElementById("winner").innerText = "The winner is X";
         noWinner = 1;
     }  else if(data[3] === "X" && data[4] === "X" && data[5] === "X"){
-        winner = "The Winner is X";
-        alert(winner);
+        document.getElementById("winner").innerText = "The winner is X";
         noWinner = 1;
     } else if(data[6] === "X" && data[7] === "X" && data[8] === "X"){
-        winner = "The Winner is X";
-        alert(winner);
+        document.getElementById("winner").innerText = "The winner is X";
         noWinner = 1;
     } else if(data[0] === "X" && data[3] === "X" && data[6] === "X"){
-        winner = "The Winner is X";
-        alert(winner);
+        document.getElementById("winner").innerText = "The winner is X";
         noWinner = 1;
     } else if(data[1] === "X" && data[4] === "X" && data[7] === "X"){
-        winner = "The Winner is X";
-        alert(winner);
+        document.getElementById("winner").innerText = "The winner is X";
         noWinner = 1;
     } else if(data[2] === "X" && data[5] === "X" && data[8] === "X"){
-        winner = "The Winner is X";
-        alert(winner);
+        document.getElementById("winner").innerText = "The winner is X";
         noWinner = 1;
     } else if(data[0] === "X" && data[4] === "X" && data[8] === "X"){
-        winner = "The Winner is X";
-        alert(winner);
+        document.getElementById("winner").innerText = "The winner is X";
         noWinner = 1;
     } else if(data[2] === "X" && data[4] === "X" && data[6] === "X"){
-        winner = "The Winner is X";
-        alert(winner);
+        document.getElementById("winner").innerText = "The winner is X";
         noWinner = 1;
     } else if(data[0] === "O" && data[1] === "O" && data[2] === "O"){
-        winner = "The Winner is O";
-        alert(winner);
+        document.getElementById("winner").innerText = "The winner is O";
         noWinner = 1;
     } else if(data[3] === "O" && data[4] === "O" && data[5] === "O"){
-        winner = "The Winner is O";
-        alert(winner);
+        document.getElementById("winner").innerText = "The winner is O";
         noWinner = 1;
     } else if(data[6] === "O" && data[7] === "O" && data[8] === "O"){
-        winner = "The Winner is O";
-        alert(winner);
+        document.getElementById("winner").innerText = "The winner is O";
         noWinner = 1;
     } else if(data[0] === "O" && data[3] === "O" && data[6] === "O"){
-        winner = "The Winner is O";
-        alert(winner);
+        document.getElementById("winner").innerText = "The winner is O";
         noWinner = 1;
     } else if(data[1] === "O" && data[4] === "O" && data[7] === "O"){
-        winner = "The Winner is O";
-        alert(winner);
+        document.getElementById("winner").innerText = "The winner is O";
         noWinner = 1;
     } else if(data[2] === "O" && data[5] === "O" && data[8] === "O"){
-        winner = "The Winner is O";
-        alert(winner);
+        document.getElementById("winner").innerText = "The winner is O";
         noWinner = 1;
     } else if(data[0] === "O" && data[4] === "O" && data[8] === "O"){
-        winner = "The Winner is O";
-        alert(winner);
+        document.getElementById("winner").innerText = "The winner is O";
         noWinner = 1;
     } else if(data[2] === "O" && data[4] === "O" && data[6] === "O"){
-        winner = "The Winner is O";
-        alert(winner);
+        document.getElementById("winner").innerText = "The winner is O";
         noWinner = 1;
     }
 }
 
-    
+
 
 
 function machineSelect(){
